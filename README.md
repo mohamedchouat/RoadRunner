@@ -4,7 +4,7 @@
 
 | Splash Screen | Top (1,000,000 Iterations) | Bottom (1,000,000 Iterations) |
 |---------------|-----------------------------|--------------------------------|
-| ![Splash](https://github.com/mohamedchouat/RoadRunner/blob/master/screens/splash.png) | ![Top 1M](https://github.com/mohamedchouat/RoadRunner/blob/master/screens/top1_000_000.png) | ![Bottom 1M](https://github.com/mohamedchouat/RoadRunner/blob/master/screens/bottom1_000_000.png) |
+| ![Splash](https://github.com/mohamedchouat/RoadRunner/blob/master/screens/splash.jpg) | ![Top 1M](https://github.com/mohamedchouat/RoadRunner/blob/master/screens/top1_000_000.png) | ![Bottom 1M](https://github.com/mohamedchouat/RoadRunner/blob/master/screens/bottom1_000_000.png) |
 
 | Top (10,000,000 Iterations) | Bottom (10,000,000 Iterations) |
 |-----------------------------|--------------------------------|
