@@ -2,16 +2,14 @@
 
 ## 📸 Screenshots
 
-| Splash Screen | Result (1,000,000 Iterations) | Result (1,000,000,000 Iterations) | Ranking Screen |
-|---------------|-------------------------------|-----------------------------------|----------------|
-| ![Splash Screen](screen/splash.png) | ![Result 1M](screen/result_1m.png) | ![Result 1B](screen/result_1b.png) | ![Ranking](screen/ranking.png) |
+| Splash Screen | Top (1,000,000 Iterations) | Bottom (1,000,000 Iterations) |
+|---------------|-----------------------------|--------------------------------|
+| ![Splash](https://github.com/mohamedchouat/RoadRunner/blob/master/screens/splash.jpg) | ![Top 1M](https://github.com/mohamedchouat/RoadRunner/blob/master/screens/top1_000_000.png) | ![Bottom 1M](https://github.com/mohamedchouat/RoadRunner/blob/master/screens/bottom1_000_000.png) |
 
-[![Kotlin](https://img.shields.io/badge/Kotlin-100%25-orange?style=flat-square)](https://kotlinlang.org/)  
-[![Jetpack Compose](https://img.shields.io/badge/Jetpack%20Compose-1.5.0-blue?style=flat-square)](https://developer.android.com/jetpack/compose)  
-[![Coroutines](https://img.shields.io/badge/Coroutines-green?style=flat-square)](https://kotlinlang.org/docs/coroutines-overview.html)  
-[![RxJava](https://img.shields.io/badge/RxJava-red?style=flat-square)](https://github.com/ReactiveX/RxJava)  
-[![RxKotlin](https://img.shields.io/badge/RxKotlin-purple?style=flat-square)](https://github.com/ReactiveX/RxKotlin)  
-[![License](https://img.shields.io/badge/License-MIT-lightgrey?style=flat-square)](LICENSE)
+| Top (10,000,000 Iterations) | Bottom (10,000,000 Iterations) |
+|-----------------------------|--------------------------------|
+| ![Top 10M](https://github.com/mohamedchouat/RoadRunner/blob/master/screens/top10_000_000.png) | ![Bottom 10M](https://github.com/mohamedchouat/RoadRunner/blob/master/screens/bottom10_000_000.png) |
+
 
 **RoadRunner Benchmark App** is a modern Android application designed to compare CPU‑intensive performance across multiple concurrency technologies.  
 It calculates π using **Coroutines, RxJava, RxKotlin, and ThreadPool**, visualizes execution graphs in real‑time, and ranks results with speed metrics.
