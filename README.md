@@ -10,6 +10,11 @@
 |-----------------------------|--------------------------------|
 | ![Top 10M](https://github.com/mohamedchouat/RoadRunner/blob/master/screens/top10_000_000.png) | ![Bottom 10M](https://github.com/mohamedchouat/RoadRunner/blob/master/screens/bottom10_000_000.png) |
 
+## 🎥 Demo Video
+
+You can watch the benchmark demo here:
+
+[![RoadRunner Demo](https://img.shields.io/badge/Video-RoadRunner%20Demo-red?style=for-the-badge)](https://github.com/mohamedchouat/RoadRunner/blob/master/screen/video.mp4)
 
 **RoadRunner Benchmark App** is a modern Android application designed to compare CPU‑intensive performance across multiple concurrency technologies.  
 It calculates π using **Coroutines, RxJava, RxKotlin, and ThreadPool**, visualizes execution graphs in real‑time, and ranks results with speed metrics.
