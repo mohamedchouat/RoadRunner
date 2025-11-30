@@ -8,6 +8,7 @@ import org.koin.dsl.module
 
 val appModule = module {
     single { PiCalculator() }
-    single { BenchmarkRunner(get()) }
+    single { BenchmarkRunner() }
     viewModel { BenchmarkViewModel(get()) }
+
 }

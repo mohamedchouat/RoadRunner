@@ -1,4 +1,4 @@
-package com.chtmed.roadrunner.presentation
+package com.chtmed.roadrunner.presentation.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

@@ -1,60 +1,47 @@
 package com.chtmed.roadrunner.data
 
-import com.chtmed.roadrunner.domain.PiCalculator
-import io.reactivex.rxjava3.core.Single
-import io.reactivex.rxjava3.schedulers.Schedulers
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
-import java.util.concurrent.Executors
+import kotlinx.coroutines.*
+import kotlin.math.pow
 
-class BenchmarkRunner(private val calculator: PiCalculator) {
+class BenchmarkRunner(private val dispatcher: CoroutineDispatcher = Dispatchers.Default) {
 
-    private val ITERATIONS = 10_000_000
-
-    // Coroutine Runner
-    suspend fun runCoroutine(): Pair<Long, List<Long>> {
-        val points = mutableListOf<Long>()
-        val start = System.currentTimeMillis()
-        withContext(Dispatchers.Default) { calculator.calculate(ITERATIONS) }
-            .also { points.add(System.currentTimeMillis() - start) }
-        val end = System.currentTimeMillis()
-        return end - start to points
+    fun runCoroutine(onUpdate: (List<Long>, Double?, Long?, Boolean) -> Unit) {
+        runGeneric(onUpdate, "Coroutine")
     }
 
-    // RxJava Runner
-    fun runRxJava(callback: (Long, List<Long>) -> Unit) {
+    fun runRxJava(onUpdate: (List<Long>, Double?, Long?, Boolean) -> Unit) {
+        runGeneric(onUpdate, "RxJava")
+    }
+
+    fun runRxKotlin(onUpdate: (List<Long>, Double?, Long?, Boolean) -> Unit) {
+        runGeneric(onUpdate, "RxKotlin")
+    }
+
+    fun runThreadPool(onUpdate: (List<Long>, Double?, Long?, Boolean) -> Unit) {
+        runGeneric(onUpdate, "ThreadPool")
+    }
+
+    private fun runGeneric(
+        onUpdate: (List<Long>, Double?, Long?, Boolean) -> Unit,
+        label: String
+    ) {
         val points = mutableListOf<Long>()
         val start = System.currentTimeMillis()
-        Single.fromCallable { calculator.calculate(ITERATIONS) }
-            .subscribeOn(Schedulers.computation())
-            .subscribe {
-                points.add(System.currentTimeMillis() - start)
-                callback(System.currentTimeMillis() - start, points)
+
+        CoroutineScope(dispatcher).launch {
+            var pi = 0.0
+            for (i in 0 until BenchmarkConfig.iterations) {
+                pi += (-1.0).pow(i.toDouble()) / (2 * i + 1)
+
+                if (i % 1000 == 0) {
+                    val elapsed = System.currentTimeMillis() - start
+                    points.add(elapsed)
+                    onUpdate(points.toList(), pi * 4, null, false)
+                }
             }
-    }
 
-    // RxKotlin Runner
-    fun runRxKotlin(callback: (Long, List<Long>) -> Unit) {
-        val points = mutableListOf<Long>()
-        val start = System.currentTimeMillis()
-        Single.just(ITERATIONS)
-            .map { calculator.calculate(it) }
-            .subscribeOn(Schedulers.computation())
-            .subscribe {
-                points.add(System.currentTimeMillis() - start)
-                callback(System.currentTimeMillis() - start, points)
-            }
-    }
-
-    // ThreadPool Runner
-    fun runThreadPool(callback: (Long, List<Long>) -> Unit) {
-        val points = mutableListOf<Long>()
-        val start = System.currentTimeMillis()
-        val executor = Executors.newFixedThreadPool(4)
-        executor.execute {
-            calculator.calculate(ITERATIONS)
-            points.add(System.currentTimeMillis() - start)
-            callback(System.currentTimeMillis() - start, points)
+            val totalTime = System.currentTimeMillis() - start
+            onUpdate(points.toList(), pi * 4, totalTime, true)
         }
     }
 }

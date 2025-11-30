@@ -11,7 +11,7 @@ android {
         applicationId = "com.chtmed.roadrunner"
         minSdk = 26
         targetSdk = 34
-        versionCode = 1
+        versionCode = 2
         versionName = "1.0"
     }
 
@@ -20,7 +20,12 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.compose.get()
+         kotlinCompilerExtensionVersion = "1.5.3"
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
     kotlinOptions {
@@ -29,16 +34,34 @@ android {
 }
 
 dependencies {
-    implementation(libs.lifecycle.viewmodel.compose)
-    implementation(libs.activity.compose)
-    implementation(libs.lifecycle.runtime.ktx)
-    implementation(libs.kotlinx.coroutines.core)
-    implementation(libs.compose.ui)
+     implementation(platform(libs.compose.bom))
+
+     implementation(libs.compose.ui)
     implementation(libs.compose.material3)
-    implementation(libs.compose.tooling)
     implementation(libs.compose.tooling.preview)
     implementation(libs.activity.compose)
-    implementation(libs.lifecycle.runtime.ktx)
+    implementation(libs.lifecycle.runtime.compose)
+    implementation(libs.lifecycle.viewmodel.compose)
+
+     implementation(libs.lifecycle.runtime.ktx)
+    implementation(libs.kotlinx.coroutines.core)
+
+
     implementation(libs.rxjava3)
     implementation(libs.rxkotlin3)
+
+     implementation(libs.work.runtime.ktx)
+    implementation(libs.lifecycle.runtime.compose)
+
+     implementation(libs.koin.core)
+    implementation(libs.koin.android)
+    implementation(libs.koin.compose)
+
+     implementation(libs.material)
+
+     debugImplementation(libs.compose.tooling)
+    debugImplementation(libs.compose.ui.test.manifest)
+
+
+    androidTestImplementation(libs.compose.ui.test.junit4)
 }

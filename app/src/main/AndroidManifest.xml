@@ -2,11 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
+        android:name=".di.RoadRunnerApp"
         android:label="Road Runner"
         android:icon="@mipmap/ic_launcher"
         android:allowBackup="true"
         android:supportsRtl="true">
-
         <activity android:name=".presentation.ui.MainActivity"
             android:exported="true">
             <intent-filter>
