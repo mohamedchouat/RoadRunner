@@ -4,11 +4,11 @@
 
 | Splash Screen | Top (1,000,000 Iterations) | Bottom (1,000,000 Iterations) |
 |---------------|-----------------------------|--------------------------------|
-| ![Splash](https://github.com/mohamedchouat/RoadRunner/blob/master/screens/splash.jpg) | ![Top 1M](https://github.com/mohamedchouat/RoadRunner/blob/master/screens/top1_000_000.png) | ![Bottom 1M](https://github.com/mohamedchouat/RoadRunner/blob/master/screens/bottom1_000_000.png) |
+| <img src="https://github.com/mohamedchouat/RoadRunner/blob/master/screens/splash.jpg" width="200"/> | <img src="https://github.com/mohamedchouat/RoadRunner/blob/master/screens/top1_000_000.png" width="200"/> | <img src="https://github.com/mohamedchouat/RoadRunner/blob/master/screens/bottom1_000_000.png" width="200"/> |
 
 | Top (10,000,000 Iterations) | Bottom (10,000,000 Iterations) |
 |-----------------------------|--------------------------------|
-| ![Top 10M](https://github.com/mohamedchouat/RoadRunner/blob/master/screens/top10_000_000.png) | ![Bottom 10M](https://github.com/mohamedchouat/RoadRunner/blob/master/screens/bottom10_000_000.png) |
+| <img src="https://github.com/mohamedchouat/RoadRunner/blob/master/screens/top10_000_000.png" width="200"/> | <img src="https://github.com/mohamedchouat/RoadRunner/blob/master/screens/bottom10_000_000.png" width="200"/> |
 
 ## 🎥 Demo Video
 
